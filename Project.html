@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars</title>
+    <link href="https://fonts.cdnfonts.com/css/thornback" rel="stylesheet" />
+
+    <style>
+      .div {
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Thornback;
+      background-color: burlywood;
+    "
+  >
+    <div>
+      <img
+        style="height: 200px; width: 300px"
+        src="https://www.premierfinancialservices.com/wp-content/uploads/2024/10/McLaren-W1-2.jpg"
+        alt="W1"
+      />
+      <h2 id="class"></h2>
+      <h2 id="greetings"></h2>
+    </div>
+    <div>
+      <img
+        style="height: 200px; width: 370px"
+        src="https://www.slashgear.com/img/gallery/what-makes-the-ford-1969-mustang-one-of-the-most-unique-american-muscle-cars-ever-built/l-intro-1711029678.jpg"
+        alt="Msutang 1969"
+      />
+      <h2 id="class1"></h2>
+      <h2 id="greetings1"></h2>
+    </div>
+    <div>
+      <img
+        style="height: 200px; width: 370px"
+        src="https://cdn.motor1.com/images/mgl/lEqmRl/s1/ram-trx-lunar-edition.jpg"
+        alt="TRX"
+      />
+      <h2 id="class2"></h2>
+      <h2 id="greetings2"></h2>
+    </div>
+    <div>
+      <img
+        style="height: 200px; width: 370px"
+        src="https://cdn.motor1.com/images/mgl/9m4RBp/s1/2025-audi-e-tron-gt.webp"
+        alt="e tron"
+      />
+      <h2 id="class3"></h2>
+      <h2 id="greetings3"></h2>
+    </div>
+    <script>
+      class vehicle {
+        constructor(brandname) {
+          this.brandname = brandname;
+        }
+        static hello() {
+          return "";
+        }
+        details() {
+          return `Brand name: ${this.brandname}<br>`;
+        }
+      }
+      class model extends vehicle {
+        constructor(brandname, model) {
+          super(brandname);
+          this.model = model;
+        }
+        show() {
+          return this.details() + "Model: " + this.model;
+        }
+      }
+      var mcLaren = new model("McLaren", "W1");
+      document.getElementById("class").innerHTML = mcLaren.show();
+      document.getElementById("greetings").innerHTML = vehicle.hello();
+      var Mustang = new model("Ford", "Mustang");
+      document.getElementById("class1").innerHTML = Mustang.show();
+      document.getElementById("greetings1").innerHTML = vehicle.hello();
+      var RAM = new model("RAM", "TRX");
+      document.getElementById("class2").innerHTML = RAM.show();
+      document.getElementById("greetings2").innerHTML = vehicle.hello();
+      var etron = new model("Audi", "E Tron");
+      document.getElementById("class3").innerHTML = etron.show();
+      document.getElementById("greetings3").innerHTML = vehicle.hello();
+    </script>
+  </body>
+</html>
